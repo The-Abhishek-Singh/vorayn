@@ -1,35 +1,22 @@
 "use client";
 
-import { ReactLenis } from "lenis/dist/lenis-react";
 import {
   motion,
   useMotionTemplate,
   useScroll,
   useTransform,
-//   MotionValue,
 } from "framer-motion";
-// import { SiSpacex } from "react-icons/si";
-import {  FiMapPin } from "react-icons/fi";
-// FiArrowRight,
+import { FiMapPin } from "react-icons/fi";
 import { useRef } from "react";
 
 export const SmoothScrollHero = () => {
   return (
     <div className="bg-zinc-950">
-      <ReactLenis
-        root
-        options={{
-          lerp: 0.05,
-        }}
-      >
-        
-        <Hero />
-        <Schedule />
-      </ReactLenis>
+      <Hero />
+      <Schedule />
     </div>
   );
 };
-
 
 const SECTION_HEIGHT = 1500;
 

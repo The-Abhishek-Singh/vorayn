@@ -4,6 +4,8 @@ import "./globals.css";
 import Footer from "@/components/main/Footer";
 import { ThemeProvider } from "next-themes";
 import { NavbarDemo } from "@/components/main/NavbarDemo";
+import LenisProvider from "@/components/LenisProvider";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -26,7 +28,7 @@ export default function RootLayout({
             <NavbarDemo />
 
             <ThemeProvider attribute="class" defaultTheme="dark">
-              {children}
+               <LenisProvider>{children}</LenisProvider>
             </ThemeProvider>
             <Footer />
        
