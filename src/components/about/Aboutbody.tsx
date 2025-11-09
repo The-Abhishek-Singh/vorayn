@@ -411,9 +411,9 @@ export default function AboutPage() {
                     </span>
                   </div>
                   <p className="text-gray-300 leading-relaxed">
-                    Today, we're pioneering AI integration, immersive experiences,
+                    Today, we&apos;re pioneering AI integration, immersive experiences,
                     and next-gen web solutions. Our commitment to innovation means
-                    we're always exploring what's next to help our clients lead
+                    we&apos;re always exploring what&apos;s next to help our clients lead
                     their industries.
                   </p>
                 </div>
@@ -522,35 +522,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="px-4 py-24 bg-gradient-to-r from-blue-900/20 via-purple-900/20 to-blue-900/20 border-t border-blue-500/10">
-        <div className="max-w-4xl mx-auto text-center relative">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            variants={fadeInUp}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-blue-300 bg-clip-text text-transparent">
-              Ready to Launch Your Next Big Idea?
-            </h2>
-            <p className="text-lg text-gray-300 mb-10 leading-relaxed">
-              Let&apos;s collaborate to bring your digital vision to life with
-              precision, creativity, and passion.
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(59, 130, 246, 0.5)' }}
-              whileTap={{ scale: 0.95 }}
-              className="relative inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-10 py-4 rounded-xl font-semibold text-lg overflow-hidden group"
-            >
-              <span className="relative z-10 flex items-center gap-2">
-                Get Started
-                <ArrowRight className="w-5 h-5" />
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </motion.button>
-          </motion.div>
-        </div>
-      </section>
     </main>
   );
 }
