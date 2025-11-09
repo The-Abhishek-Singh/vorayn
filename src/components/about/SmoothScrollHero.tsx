@@ -11,7 +11,7 @@ import { useRef } from "react";
 
 export const SmoothScrollHero = () => {
   return (
-    <div className="bg-zinc-950">
+    <div className="bg-[hsla(222.2,_84%,_4.9%,_1)]">
       <Hero />
       <Schedule />
     </div>
