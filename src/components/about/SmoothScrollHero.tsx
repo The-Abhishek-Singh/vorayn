@@ -28,7 +28,7 @@ const Hero = () => {
     >
       <CenterImage />
       <ParallaxImages />
-      <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-b from-zinc-950/0 to-zinc-950" />
+      <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-b from-[hsla(222.2,_84%,_4.9%,_0)] to-[hsla(222.2,_84%,_4.9%,_1)]" />
     </div>
   );
 };
