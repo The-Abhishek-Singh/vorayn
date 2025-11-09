@@ -60,7 +60,7 @@ const CenterImage = () => {
         backgroundSize,
         opacity,
         backgroundImage:
-          "url(https://i.pinimg.com/1200x/cd/d6/9b/cdd69b8643a10b3144dd38dc8f37a186.jpg)",
+          "url(https://i.pinimg.com/1200x/60/ef/0b/60ef0bbe2c47fc29fc60cdc3c5ae97ec.jpg)",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
