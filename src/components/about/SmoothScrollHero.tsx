@@ -110,7 +110,7 @@ const CenterImage = () => {
                   letterSpacing: '0.2em'
                 }}
               >
-                CodeAstera
+                VORYAN
               </span>
             </h2>
             
