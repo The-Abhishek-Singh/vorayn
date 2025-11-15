@@ -21,7 +21,7 @@ const SECTION_HEIGHT = 1500;
 const Hero = () => {
   return (
     <div
-      style={{ height: `calc(${SECTION_HEIGHT}px + 100vh)` }}
+      style={{ height: `calc(${SECTION_HEIGHT}px + 140vh)` }}
       className="relative w-full"
     >
       <CenterImage />
@@ -69,7 +69,7 @@ const CenterImage = () => {
       }}
     >
       {/* Cosmic overlay gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-black/40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-900/10 to-black/40" />
       
       <motion.div 
         className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none"
@@ -110,7 +110,7 @@ const CenterImage = () => {
                   letterSpacing: '0.2em'
                 }}
               >
-                VORYAN
+                VORAYN  
               </span>
             </h2>
             
@@ -137,7 +137,7 @@ const ParallaxImages = () => {
         start={-200}
         end={200}
         className="w-full sm:w-2/3 md:w-1/2 lg:w-1/3"
-        title="Innovation First"
+        title="Innovation"
         description="Creating solutions that push boundaries and redefine possibilities"
       />
       <ParallaxImg
@@ -195,47 +195,86 @@ const ParallaxImg = ({ className, alt, src, start, end, title, description }: Pa
   const y = useTransform(scrollYProgress, [0, 1], [start, end]);
   const transform = useMotionTemplate`translateY(${y}px) scale(${scale})`;
 
+  // Text animations that move with the image
+  const textY = useTransform(scrollYProgress, [0, 0.5, 1], [20, 0, -20]);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+
   return (
     <motion.div
-      className={`relative ${className} mb-12 sm:mb-16 md:mb-20`}
+      className={`relative ${className} mb-12 sm:mb-16 md:mb-24 lg:mb-32`}
       ref={ref}
       style={{ transform, opacity }}
     >
-      {/* Image with overlay gradient */}
-      <div className="relative rounded-xl overflow-hidden shadow-2xl">
+      {/* Image with cosmic overlay */}
+      <div className="relative rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(139,92,246,0.3)]">
         <img 
           src={src} 
           alt={alt} 
           className="w-full h-auto object-cover"
         />
         
-        {/* Gradient overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+        {/* Cosmic gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-cyan-900/20 to-transparent" />
+        
+        {/* Subtle glow effect */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-cyan-500/5" />
 
-        {/* Text overlay - now inside the same container */}
+        {/* Text overlay with cosmic styling */}
         {(title || description) && (
-          <div className="absolute inset-0 flex items-end p-4 sm:p-6 md:p-8">
-            <div className="text-white max-w-full">
-              {title && (
-                <h3 
-                  className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 tracking-tight leading-tight"
-                  style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
-                >
-                  {title}
-                </h3>
-              )}
-              {description && (
-                <p 
-                  className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-200 leading-relaxed max-w-md font-medium"
-                  style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
-                >
-                  {description}
-                </p>
-              )}
+          <motion.div 
+            className="absolute inset-0 flex items-end p-4 sm:p-6 md:p-8 lg:p-10"
+            style={{ 
+              y: textY,
+              opacity: textOpacity 
+            }}
+          >
+            <div className="text-white max-w-full relative">
+              {/* Decorative cosmic element */}
+              <motion.div 
+                className="absolute -left-2 top-0 w-1 h-full bg-gradient-to-b from-blue-400 via-purple-400 to-transparent rounded-full"
+                initial={{ height: 0 }}
+                whileInView={{ height: '100%' }}
+                transition={{ duration: 0.8 }}
+              />
+              
+              <div className="pl-4 sm:pl-6">
+                {title && (
+                  <h3 
+                    className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light mb-2 sm:mb-3 tracking-wide leading-tight"
+                    style={{ 
+                      fontFamily: 'Georgia, "Times New Roman", serif',
+                      letterSpacing: '0.05em'
+                    }}
+                  >
+                    <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(147,197,253,0.4)]">
+                      {title}
+                    </span>
+                  </h3>
+                )}
+                {description && (
+                  <p 
+                    className="text-xs sm:text-sm md:text-base lg:text-lg text-blue-100/90 leading-relaxed max-w-md font-light tracking-wide"
+                    style={{ 
+                      fontFamily: 'Georgia, "Times New Roman", serif',
+                      letterSpacing: '0.02em'
+                    }}
+                  >
+                    {description}
+                  </p>
+                )}
+                
+                {/* Decorative line */}
+                <motion.div 
+                  className="mt-3 sm:mt-4 w-12 sm:w-16 h-px bg-gradient-to-r from-blue-400 to-transparent"
+                  initial={{ width: 0 }}
+                  whileInView={{ width: '4rem' }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                />
+              </div>
             </div>
-          </div>
+          </motion.div>
         )}
       </div>
     </motion.div>
   );
-};
+};  
