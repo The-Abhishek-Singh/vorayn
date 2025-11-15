@@ -11,7 +11,7 @@ import { useRef } from "react";
 
 export const SmoothScrollHero = () => {
   return (
-    <div className="bg-[hsla(222.2,_84%,_4.9%,_1)]">
+    <div className="bg-gradient-to-b from-[#020714] to-[hsla(222.2,84%,4.9%,1)]">
       <Hero />
       {/* <Schedule /> */}
     </div>
@@ -59,8 +59,7 @@ const CenterImage = () => {
         clipPath,
         backgroundSize,
         opacity,
-        backgroundImage:
-          "url(https://i.pinimg.com/1200x/60/ef/0b/60ef0bbe2c47fc29fc60cdc3c5ae97ec.jpg)",
+        backgroundImage:"url(about/mainAbout.webp)",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
@@ -72,7 +71,7 @@ const ParallaxImages = () => {
   return (
     <div className="mx-auto max-w-5xl px-4 pt-[200px]">
       <ParallaxImg
-        src="https://i.pinimg.com/1200x/4c/59/21/4c592144e9297a2b676e4b72db1230d1.jpg"
+        src="/about/About1.webp"
         alt="And example of a space launch"
         start={-200}
         end={200}
