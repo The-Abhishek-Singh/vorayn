@@ -273,48 +273,31 @@ export const ContactFormMinimal = () => {
 
         {/* Submit Button */}
         <motion.div variants={itemVariants} className="pt-8">
-          <motion.button
-            type="submit"
-            disabled={isLoading || isSuccess}
-            whileHover={{ scale: isLoading || isSuccess ? 1 : 1.02 }}
-            whileTap={{ scale: isLoading || isSuccess ? 1 : 0.98 }}
-            className="relative group w-full sm:w-auto min-w-[200px]"
-          >
-            {/* Glow effect on hover */}
-            <motion.div
-              className="absolute -inset-[2px] rounded-full opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500"
-              style={{
-                background:
-                  "linear-gradient(90deg, rgba(168,85,247,0.5), rgba(236,72,153,0.5), rgba(168,85,247,0.5))",
-              }}
-            />
-
-            {/* Button border and content */}
-            <div className="relative px-12 py-4 rounded-full border border-purple-500/30 bg-black/20 backdrop-blur-sm overflow-hidden group-hover:border-purple-500/60 transition-colors duration-300">
-              {/* Gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/10 to-purple-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-              {/* Button text */}
-              <div className="relative flex items-center justify-center gap-3 text-white font-light tracking-wide">
-                {isLoading ? (
-                  <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                    <span>Sending...</span>
-                  </>
-                ) : isSuccess ? (
-                  <>
-                    <CheckCircle2 className="w-5 h-5 text-green-400" />
-                    <span className="text-green-400">Message Sent!</span>
-                  </>
-                ) : (
-                  <>
-                    <span>Send Message</span>
-                    <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </>
-                )}
-              </div>
-            </div>
-          </motion.button>
+          <div className="relative inline-flex items-center justify-center group">
+            <div className="absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:shadow-lg group-hover:shadow-cyan-500/50"></div>
+            <button
+              type="submit"
+              disabled={isLoading || isSuccess}
+              className="relative inline-flex items-center justify-center w-full px-6 py-2 text-base font-normal text-white bg-black border border-transparent rounded-full"
+            >
+              {isLoading ? (
+                <>
+                  <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                  <span>Sending...</span>
+                </>
+              ) : isSuccess ? (
+                <>
+                  <CheckCircle2 className="w-5 h-5 text-green-400 mr-2" />
+                  <span className="text-green-400">Message Sent!</span>
+                </>
+              ) : (
+                <>
+                  <span>Send Message</span>
+                  <Send className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                </>
+              )}
+            </button>
+          </div>
         </motion.div>
       </div>
     </motion.form>
