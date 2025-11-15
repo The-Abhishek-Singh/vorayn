@@ -43,9 +43,6 @@ export const ContactHero = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mb-6"
         >
-          <span className="inline-block px-4 py-2 rounded-full border border-purple-500/30 bg-purple-500/5 backdrop-blur-sm text-sm text-purple-300 font-light tracking-wider">
-            GET IN TOUCH
-          </span>
         </motion.div>
 
         {/* Main heading */}
@@ -53,12 +50,18 @@ export const ContactHero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-5xl md:text-7xl font-extralight text-white mb-6 tracking-tight"
+          className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight"
         >
-          Let&apos;s Create
+          Let&apos;s Build Something
           <br />
-          <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
-            Something Amazing
+          <span className="relative inline-block">
+            Beautiful Together
+            <motion.span
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 origin-left"
+            />
           </span>
         </motion.h1>
 
