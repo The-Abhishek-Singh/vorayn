@@ -7,7 +7,6 @@ const HeroSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Start animation earlier
     const timer = setTimeout(() => setIsVisible(true), 50);
 
     const handleScroll = () => {
@@ -46,22 +45,22 @@ const HeroSection = () => {
           muted
           loop
           playsInline
+          preload="auto"
+          poster="/public/about/About1.webp"
           aria-hidden="true"
         >
           <source src="/about/hero.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        
-        {/* Bottom gradient overlay for blending */}
-        <div 
+
+        <div
           className="absolute inset-0"
           style={{
             background: 'linear-gradient(to bottom, transparent 0%, transparent 60%, #020714 100%)',
           }}
         />
-        
-        {/* Scroll-triggered overlay */}
-        <div 
+
+        <div
           className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#020714]"
           style={{
             opacity: scrollProgress * 0.8,
@@ -128,7 +127,7 @@ function App() {
   return (
     <div className="min-h-screen bg-[#020714]">
       <HeroSection />
-      
+
     </div>
   );
 }
