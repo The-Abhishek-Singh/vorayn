@@ -11,7 +11,7 @@ import { useRef } from "react";
 
 export const SmoothScrollHero = () => {
   return (
-    <div className="bg-[hsla(222.2,_84%,_4.9%,_1)]">
+    <div className="bg-gradient-to-b from-[#020714] to-[hsla(222.2,84%,4.9%,1)]">
       <Hero />
       {/* <Schedule /> */}
     </div>
