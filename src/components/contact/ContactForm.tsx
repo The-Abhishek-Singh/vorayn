@@ -93,7 +93,7 @@ export const ContactForm = () => {
     bg-white/5 backdrop-blur-sm
     border border-white/10
     text-white placeholder-gray-400
-    focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50
+    focus:outline-none focus:border-transparent
     transition-all duration-300
     hover:bg-white/10
   `;
@@ -115,7 +115,8 @@ export const ContactForm = () => {
         {/* Form Content */}
         <div className="relative z-10 space-y-6">
           {/* Name Field */}
-          <div>
+          <div className="relative">
+            <div className="absolute -inset-px rounded-xl bg-gradient-to-r from-cyan-500 to-purple-500 opacity-0 pointer-events-none transition-opacity duration-300 focus-within:opacity-100" />
             <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
               Name
             </label>
@@ -129,7 +130,7 @@ export const ContactForm = () => {
               aria-label="Your name"
               aria-invalid={!!errors.name}
               aria-describedby={errors.name ? "name-error" : undefined}
-              className={inputClasses}
+              className={`${inputClasses} relative z-10`}
             />
             {errors.name && (
               <motion.p
@@ -144,7 +145,8 @@ export const ContactForm = () => {
           </div>
 
           {/* Email Field */}
-          <div>
+          <div className="relative">
+            <div className="absolute -inset-px rounded-xl bg-gradient-to-r from-cyan-500 to-purple-500 opacity-0 pointer-events-none transition-opacity duration-300 focus-within:opacity-100" />
             <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
               Email
             </label>
@@ -158,7 +160,7 @@ export const ContactForm = () => {
               aria-label="Your email address"
               aria-invalid={!!errors.email}
               aria-describedby={errors.email ? "email-error" : undefined}
-              className={inputClasses}
+              className={`${inputClasses} relative z-10`}
             />
             {errors.email && (
               <motion.p
@@ -173,7 +175,8 @@ export const ContactForm = () => {
           </div>
 
           {/* Subject Field */}
-          <div>
+          <div className="relative">
+            <div className="absolute -inset-px rounded-xl bg-gradient-to-r from-cyan-500 to-purple-500 opacity-0 pointer-events-none transition-opacity duration-300 focus-within:opacity-100" />
             <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
               Subject
             </label>
@@ -187,7 +190,7 @@ export const ContactForm = () => {
               aria-label="Email subject"
               aria-invalid={!!errors.subject}
               aria-describedby={errors.subject ? "subject-error" : undefined}
-              className={inputClasses}
+              className={`${inputClasses} relative z-10`}
             />
             {errors.subject && (
               <motion.p
@@ -202,7 +205,8 @@ export const ContactForm = () => {
           </div>
 
           {/* Message Field */}
-          <div>
+          <div className="relative">
+            <div className="absolute -inset-px rounded-xl bg-gradient-to-r from-cyan-500 to-purple-500 opacity-0 pointer-events-none transition-opacity duration-300 focus-within:opacity-100" />
             <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
               Message
             </label>
@@ -216,7 +220,7 @@ export const ContactForm = () => {
               aria-label="Your message"
               aria-invalid={!!errors.message}
               aria-describedby={errors.message ? "message-error" : undefined}
-              className={`${inputClasses} resize-none`}
+              className={`${inputClasses} resize-none relative z-10`}
             />
             {errors.message && (
               <motion.p

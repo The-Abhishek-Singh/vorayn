@@ -114,24 +114,7 @@ export const ContactInfo = () => {
   return (
     <div className="relative w-full py-16">
       {/* Contact Cards Grid */}
-      <div className="max-w-6xl mx-auto px-6 mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <ContactCard
-            icon={<Mail size={32} strokeWidth={1.5} />}
-            title="Email"
-            value="hello@vorayn.com"
-            href="mailto:hello@vorayn.com"
-            delay={0.1}
-          />
-          <ContactCard
-            icon={<Phone size={32} strokeWidth={1.5} />}
-            title="Phone"
-            value="+1 (555) 123-4567"
-            href="tel:+15551234567"
-            delay={0.2}
-          />
-        </div>
-      </div>
+      
 
       {/* Social Links Section */}
       <motion.div
